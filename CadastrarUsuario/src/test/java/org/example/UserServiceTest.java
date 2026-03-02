@@ -21,7 +21,7 @@ class UserServiceTest {
         userService = new UserService(userRepository);
     }
 
-    // TC001 (fluxo feliz - paciente)
+    // TC001 (fluxo - paciente)
     @Test
     void deveCadastrarPacienteComSucesso_quandoDadosForemValidos() {
         RegisterUserRequest req = RegisterUserRequestBuilder.aValidPatient().build();
@@ -34,7 +34,7 @@ class UserServiceTest {
         assertThat(saved.getCpf()).isEqualTo("04506474473"); // normalizado
     }
 
-    // TC001 (fluxo feliz - médico)
+    // TC001 (fluxo - médico)
     @Test
     void deveCadastrarMedicoComSucesso_quandoCrmForValido() {
         RegisterUserRequest req = RegisterUserRequestBuilder.aValidDoctor().build();
@@ -199,7 +199,7 @@ class UserServiceTest {
         }
     }
 
-    // TC001_12 (no Excel está com ID errado, mas regra está clara)
+    // TC001_12 
     @Test
     void deveLancarExceptionQuandoCrmDoUsuarioForVazio_quandoTipoForMedico() {
         RegisterUserRequest req = RegisterUserRequestBuilder.aValidDoctor()
@@ -239,7 +239,7 @@ class UserServiceTest {
                 .hasMessageContaining("CPF já cadastrado");
     }
 
-    // TC001_15 (no Excel aparece como TC_001_16)
+    // TC001_15 
     @Test
     void deveLancarExceptionQuandoFotoDocumentoForVazia() {
         RegisterUserRequest req = RegisterUserRequestBuilder.aValidPatient()
@@ -313,4 +313,5 @@ class UserServiceTest {
             );
         }
     }
+
 }
