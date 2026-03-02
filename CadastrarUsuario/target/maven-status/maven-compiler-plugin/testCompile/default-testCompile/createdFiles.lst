@@ -1,0 +1,4 @@
+org\example\PrescriptionServiceTest$CreatePrescriptionRequestBuilder.class
+org\example\UserServiceTest.class
+org\example\PrescriptionServiceTest.class
+org\example\UserServiceTest$RegisterUserRequestBuilder.class
